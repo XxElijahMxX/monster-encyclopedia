@@ -3,12 +3,6 @@ INSERT INTO category (name)
 VALUE ('Demons');
 INSERT INTO category (name)
 VALUE ('Undead');
--- INSERT INTO categories (name) --
--- VALUE ('Yokai'); --
--- INSERT INTO categories (name)
---VALUE ('Fae');
---INSERT INTO categories (name)
---VALUE ('Aquatic');
 INSERT INTO category (name)
 VALUE ('Mythical');
 
@@ -22,7 +16,7 @@ VALUE ("3");
 
 
 -- monster names/id --
-INSERT INTO monster (monster_name, role_id, )
+INSERT INTO monster (monster_name, role_id)
 VALUE ("Vampire", 2);
 INSERT INTO monster (monster_name, role_id)
 VALUE ("Zombie", 2);

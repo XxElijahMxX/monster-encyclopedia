@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS monsters_db;
 
 CREATE DATABASE monsters_db;
 
+USE monsters_db;
 
 CREATE TABLE category (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -20,7 +21,7 @@ CREATE TABLE monster (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     monster_name VARCHAR(30),
     role_id INT,
-    FOREIGN KEY (role_id) REFERENCES role(id),
+    FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
 
