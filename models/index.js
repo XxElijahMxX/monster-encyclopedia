@@ -1,14 +1,17 @@
-const Monsters = require('./Monsters');
-const User = require('User');
+const Monsters = require('../models/Monsters');
 const Category = require('./Category');
 
 Monsters.belongsTo(Category, {
     foreignKey: "category_id",
-    onDelete: "CASCADE"
-})
+});
+
+Category.hasMany(Monsters, {
+    foreignKey: "category_id",
+});
+
+
 
 module.exports = {
     Monsters,
-    User,
     Category
 }

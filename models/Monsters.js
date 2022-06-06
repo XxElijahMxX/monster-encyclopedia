@@ -12,14 +12,14 @@ class Monsters extends Model {}
             primaryKey: true,
             autoIncrement: true,
         },
-        monster_name:{
+        monster_name: {
             type: DataTypes.STRING,
             allowNull: false,
         
         },
         description: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.TEXT,
+            allowNull: true,
         },
         category_id: {
             type: DataTypes.INTEGER,
