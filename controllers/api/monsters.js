@@ -18,6 +18,31 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Monsters.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['monster_name', 'id', 'category_id'],
+        include: [
+            {
+                model: Category,
+                attributes: ['id', 'category_name'],
+            }
+        ]
+    })
+    .then((monData) => {
+        if (!monData) {
+            res.status(404).json({ message: 'The monster you requested does not exist' });
+            return;
+        }
+        res.json(monData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
 
