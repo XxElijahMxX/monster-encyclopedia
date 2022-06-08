@@ -1,11 +1,11 @@
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const hbs = exphbs.create({});
-
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +17,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 
 app.use(routes);
