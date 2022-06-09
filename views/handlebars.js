@@ -58,7 +58,7 @@ $(document).ready(function () {
 
   var monsterTemplate = $("#monster-template").html();
   var monsterTemplateScript = Handlebars.compile(monsterTemplate);
-  var monsterHtml = monsterTemplateScript(monstersArray [3]);
+  var monsterHtml = monsterTemplateScript(monstersArray [2]);
 
   $(document.body).append(monsterHtml);
 
