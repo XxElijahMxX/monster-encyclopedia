@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
     var monsters = [
         {
           id: 0,
-          name: "zombie1",
+          name: "zombie",
           location: "europe",
           type: "undead",
           description:

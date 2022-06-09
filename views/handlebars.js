@@ -36,7 +36,7 @@ var monstersArray = [
     name: "satan",
     location: "hell",
     type: "demon",
-    description: "big red pitch fork wielding jerk",
+    description: "big red pitch fork wielding...",
   },
   {
       id: 3,
