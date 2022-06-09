@@ -72,8 +72,8 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('add-categories', (req, res) => {
-    res.render('add-categories');
+router.get('add-category', (req, res) => {
+    res.render('add-category');
 });
 
 module.exports = router;
