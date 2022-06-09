@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Category } = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -16,8 +16,14 @@ router.get('/:id', (req, res) => {
     User.findOne({
       attributes: { exclude: ['password'] },
       where: {
-        id: req.params.id
+        id: req.params.id,
       },
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'user_id', 'category_name'],
+        },
+      ],
     })
     .then(userValue => {
         if (!userValue) {

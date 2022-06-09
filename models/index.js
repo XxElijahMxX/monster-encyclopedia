@@ -2,6 +2,7 @@ const Monsters = require('../models/Monsters');
 const Category = require('./Category');
 const User = require('./User');
 
+
 Monsters.belongsTo(Category, {
     foreignKey: "category_id",
 });
