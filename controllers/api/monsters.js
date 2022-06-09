@@ -44,9 +44,55 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Monsters.create({
+        monster_name: req.body.monster_name,
+        category_id: req.body.category_id
+    })
+    .then(monData => res.json(monData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
+router.put('/:id', (req, res) => {
+    Monsters.update(req.body, {
+        where: {
+            id: req.params.id,
+        },
+    })
+    .then(monData => {
+        if (!monData[0]) {
+            res.status(404).json({ message: 'The monster could not be found with this id'});
+            return;
+        }
+        res.json(monData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
-
+router.delete('/:id', (req, res) => {
+    Monsters.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(monData => {
+        if (!monData) {
+            res.status(404).json({ message: 'Monster could not be found with this id'});
+            return;
+        }
+        res.json(monData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
 
