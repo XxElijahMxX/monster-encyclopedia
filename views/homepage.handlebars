@@ -1,0 +1,13 @@
+<h1>homepage</h1>
+<ol class="monster-list">
+  {{#each monsters as |monster|}}
+      
+  <li>
+     Name: {{monster.name}} <br>
+     Location:  {{monster.location}} <br>
+     Type: {{monster.type}} <br>
+     Description: {{monster.description}} <br>
+     <br>
+  </li>
+  {{/each}}
+</ol>
